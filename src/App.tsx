@@ -1,23 +1,49 @@
 import React from "react";
 import "./App.css";
-import { Button } from "react-bootstrap";
+import logo from "./images/StardewLogo.jpg";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 function App(): React.JSX.Element {
     return (
         <div className="App">
-            <header className="App-header">
+            <header
+                className="App-header"
+                style={{ backgroundColor: "purple" }}
+            >
                 UD CISC275 with React Hooks and TypeScript
                 <h3>Madison Saunders</h3>
             </header>
-            <header>Stardew Valley</header>
-
             <img
-                src="../images/StardewLogo.jpg"
+                src={logo}
                 alt="The Stardew Valley start screen"
+                style={{ width: 400, margin: 25 }}
             />
-
-            <h4>Crops grown in the Spring</h4>
-            <ul>
+            <Container>
+                <Row>
+                    <Col>
+                        <div
+                            style={{
+                                width: "100px",
+                                height: "200px",
+                                backgroundColor: "red",
+                                float: "right",
+                            }}
+                        ></div>
+                    </Col>
+                    <Col>
+                        <div
+                            style={{
+                                width: "100px",
+                                height: "200px",
+                                backgroundColor: "darkred",
+                                float: "left",
+                            }}
+                        ></div>
+                    </Col>
+                </Row>
+            </Container>
+            <br></br>
+            <ul style={{ textAlign: "left" }}>
                 <li>Cauliflower</li>
                 <li>Potato</li>
                 <li>Carrot</li>
