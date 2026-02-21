@@ -30,18 +30,13 @@ export function add3(first: number, second: number, third: number): number {
  * Consumes a string and produces the same string in UPPERCASE and with an exclamation
  * mark added to the end.
  */
-export function shout(message: string): string {
-    message = message.toUpperCase() + "!";
-    return message;
-}
+export const shout = (message: string): string => message.toUpperCase() + "!";
 
 /**
  * Consumes a string (a message) and returns a boolean if the string ends in a question
  * mark. Do not use an `if` statement in solving this question.
  */
-export function isQuestion(message: string): boolean {
-    return message.endsWith("?");
-}
+export const isQuestion = (message: string): boolean => message.endsWith("?");
 
 /**
  * Consumes a word (a string) and returns either `true`, `false`, or `null`. If the string
@@ -50,9 +45,9 @@ export function isQuestion(message: string): boolean {
  */
 export function convertYesNo(word: string): boolean | null {
     word = word.toLowerCase();
-    if (word == "yes") {
+    if (word === "yes") {
         return true;
-    } else if (word == "no") {
+    } else if (word === "no") {
         return false;
     } else {
         return null;
