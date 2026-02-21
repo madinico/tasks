@@ -54,7 +54,12 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    const newMessages = messages
+        .map((message: string): string =>
+            message.includes("!") ? message.toUpperCase() : message,
+        )
+        .filter((message: string): boolean => !message.endsWith("?"));
+    return newMessages;
 };
 
 /**
@@ -62,7 +67,8 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    const shortWords = words.filter((word: string): boolean => word.length < 4);
+    return shortWords.length;
 }
 
 /**
@@ -71,7 +77,11 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    const rgb = colors.every(
+        (color: string): boolean =>
+            color === "red" || color === "green" || color === "blue",
+    );
+    return rgb;
 }
 
 /**
@@ -82,6 +92,8 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
+    let sum: number = 0;
+
     return "";
 }
 
