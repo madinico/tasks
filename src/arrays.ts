@@ -113,5 +113,29 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    const negNumExists = values.some((value: number): boolean => value < 0);
+    const newValues = [...values];
+    if (!negNumExists) {
+        const sum = values.reduce(
+            (currentTotal: number, value: number) => currentTotal + value,
+            0,
+        );
+
+        newValues.push(sum);
+    } else {
+        // If there is a negative number in the list, sum the numbers up until the negative number,
+        // Then, insert the sum after the negative number
+        const firstNegativeIndex = values.findIndex(
+            (value: number): boolean => value < 0,
+        );
+        const sum = newValues
+            .slice(0, firstNegativeIndex)
+            .reduce(
+                (total: number, value: number) =>
+                    value > 0 ? total + value : total,
+                0,
+            );
+        newValues.splice(firstNegativeIndex + 1, 0, sum);
+    }
+    return newValues;
 }
