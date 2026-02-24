@@ -85,13 +85,13 @@ export function toShortForm(question: Question): string {
  */
 export function toMarkdown(question: Question): string {
     const { name, body, type, options } = question;
+    let str: string = "";
     if (type === "multiple_choice_question") {
-        const str: string = `# ${name}\n${body}\n- ${options[0]} \n- ${options[1]} \n- ${options[2]}`;
-        return str;
+        str = `# ${name}\n${body}\n- ${options[0]}\n- ${options[1]}\n- ${options[2]}`;
     } else {
-        const str: string = `# ${name}\n${body}\n`;
-        return str;
+        str = `# ${name}\n${body}`;
     }
+    return str;
 }
 
 /**
