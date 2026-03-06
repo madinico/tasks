@@ -10,8 +10,12 @@ import { Counter } from "./components/Counter";
 function App(): React.JSX.Element {
     return (
         <div className="App">
-            <header className="App-header">
+            <header
+                className="App-header"
+                style={{ backgroundColor: "purple" }}
+            >
                 UD CISC275 with React Hooks and TypeScript
+                <h3>Madison Saunders</h3>
             </header>
             <hr></hr>
             <Counter></Counter>
