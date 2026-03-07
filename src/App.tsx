@@ -14,8 +14,12 @@ import { ChooseTeam } from "./bad-components/ChooseTeam";
 function App(): React.JSX.Element {
     return (
         <div className="App">
-            <header className="App-header">
+            <header
+                className="App-header"
+                style={{ backgroundColor: "purple" }}
+            >
                 UD CISC275 with React Hooks and TypeScript
+                <h3>Madison Saunders</h3>
             </header>
             <hr></hr>
             <DoubleHalf></DoubleHalf>
